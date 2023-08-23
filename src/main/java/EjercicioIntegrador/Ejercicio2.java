@@ -1,25 +1,29 @@
 package EjercicioIntegrador;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Ejercicio2 {
     public static void main(String[] args) {
 
-        Calculadora calc = new Calculadora();
 
         int valor1;
         int valor2;
         int resultado = 0;
         String operacion;
+        int bucle = 1;
+
+        Calculadora calc = new Calculadora();
 
         Scanner teclado = new Scanner(System.in);
 
-        System.out.println("Ingrese el valor 1: ");
-        valor1 = teclado.nextInt();
-        System.out.println("Ingrese el valor 2: ");
-        valor2 = teclado.nextInt();
-        System.out.println("Ingrese la operación que quiere realizar (+, -, *, /): ");
-        operacion = teclado.next();
+        do{
+            System.out.println("Ingrese el valor 1: ");
+            valor1 = teclado.nextInt();
+            System.out.println("Ingrese el valor 2: ");
+            valor2 = teclado.nextInt();
+            System.out.println("Ingrese la operación que quiere realizar (+, -, *, /): ");
+            operacion = teclado.next();
 
             switch (operacion) {
                 case "+":
@@ -37,9 +41,6 @@ public class Ejercicio2 {
                 case "/":
                     resultado = calc.dividir(valor1, valor2);
                     System.out.println("El resultado es: " + resultado);
-                    break;
-                default:
-                    System.out.println("operación inválida");
             }
 
             if (resultado < 0) {
@@ -49,5 +50,10 @@ public class Ejercicio2 {
             if (resultado > 1000) {
                 System.out.println("El resultado es un número grande");
             }
-        }
+        }while ((Objects.equals(operacion, "+"))||(Objects.equals(operacion, "-")||(Objects.equals(operacion, "*")||(Objects.equals(operacion, "/")))));
+
+
+
+
     }
+}

@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         int cont = 0;
-        while (cont <= 5) {
+        while (cont < 6) {
             cont = cont + 1;
 
             Calculadora calc = new Calculadora();
